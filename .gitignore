@@ -18,3 +18,5 @@ buildNumber.properties
 **/target/
 
 .idea
+
+**/node_modules
