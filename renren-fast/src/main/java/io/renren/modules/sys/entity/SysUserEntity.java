@@ -87,4 +87,6 @@ public class SysUserEntity implements Serializable {
 	 */
 	private Date createTime;
 
+
+
 }

@@ -5,7 +5,6 @@ server:
     max-threads: 1000
     min-spare-threads: 30
   port: 8080
-  connection-timeout: 5000ms
   servlet:
     context-path: /renren-fast
 
@@ -23,9 +22,9 @@ spring:
       max-request-size: 100MB
       enabled: true
   redis:
-    open: false  # 是否开启redis缓存  true开启   false关闭
+    open: true  # 是否开启redis缓存  true开启   false关闭
     database: 0
-    host: localhost
+    host: cloud.xyxdbp.xyz
     port: 6379
     password:    # 密码（默认为空）
     timeout: 6000ms  # 连接超时时长（毫秒）
@@ -37,6 +36,13 @@ spring:
         min-idle: 5       # 连接池中的最小空闲连接
   mvc:
     throw-exception-if-no-handler-found: true
+  application:
+    name: renren-fast
+  cloud:
+    nacos:
+      discovery:
+        server-addr: cloud.xyxdbp.xyz:8848
+
 #  resources:
 #    add-mappings: false
 
@@ -60,7 +66,6 @@ mybatis-plus:
     cache-enabled: false
     call-setters-on-nulls: true
     jdbc-type-for-null: 'null'
-
 
 renren:
   redis:

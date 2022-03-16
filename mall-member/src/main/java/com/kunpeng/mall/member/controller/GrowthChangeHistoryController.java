@@ -34,7 +34,7 @@ public class GrowthChangeHistoryController {
     private GrowthChangeHistoryService growthChangeHistoryService;
 
     @Autowired
-    CouponFeignService couponFeignService;
+    private CouponFeignService couponFeignService;
 
     @RequestMapping("/conpons")
     public R test(){

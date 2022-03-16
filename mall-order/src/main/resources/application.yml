@@ -2,7 +2,7 @@ spring:
   datasource:
     username: root
     password: wuguipeng
-    url: jdbc:mysql://cloud.kunpeng.gq:3306/mall_oms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://cloud.xyxdbp.xyz:3306/mall_oms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 

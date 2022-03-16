@@ -1,31 +1,23 @@
 package com.kunpeng.mall.product;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.extension.conditions.query.QueryChainWrapper;
-import com.kunpeng.mall.product.entity.BrandEntity;
-import com.kunpeng.mall.product.service.BrandService;
-import org.junit.jupiter.api.Test;
+
+import com.kunpeng.mall.product.service.CategoryService;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.List;
+
+import java.util.Arrays;
 
 @SpringBootTest
 class MallProductApplicationTests {
-
     @Autowired
-    BrandService brandService;
+    CategoryService categoryService;
 
     @Test
-    void contextLoads() {
-//        BrandEntity brandEntity = new BrandEntity();
-//        brandEntity.setName("荣耀");
-//        brandService.save(brandEntity);
-//        System.out.println("保存成功");
-        List<BrandEntity> brand_id = brandService.list(new QueryWrapper<BrandEntity>().eq("brand_id", 1));
-        brand_id.forEach((item)->{
-            System.out.println(item);
-        });
+    public void testFindPath(){
+        Long[] catelogPath = categoryService.findCatelogPath(225L);
+        System.out.println(Arrays.asList(catelogPath));
     }
 
 }

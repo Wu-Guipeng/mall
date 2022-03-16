@@ -2,11 +2,34 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: baidu-routes
-          uri: https://www.baidu.com
+        - id: product_route
+          uri: http://127.0.0.1:10001
           predicates:
-            - Query=url,baidu
-        - id: qq-routes
-          uri: https://www.qq.com
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*), /$\{segment}
+
+        - id: member_route
+          uri: http://127.0.0.1:8000
           predicates:
-            - Query=url,qq
+            - Path=/api/member/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*), /$\{segment}
+
+        - id: third_party_route
+          uri: http://127.0.0.1:30000
+          predicates:
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath=/api/thirdparty/(?<segment>/?.*), /$\{segment}
+
+        - id: admin_route
+          uri: http://cloud.xyxdbp.xyz:8080
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*), /renren-fast/$\{segment}
+
+
+
+

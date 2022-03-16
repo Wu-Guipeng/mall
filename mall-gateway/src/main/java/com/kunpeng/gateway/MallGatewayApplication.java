@@ -1,4 +1,4 @@
-package com.kunpeng.mallgateway;
+package com.kunpeng.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
